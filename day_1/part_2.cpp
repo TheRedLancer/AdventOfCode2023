@@ -12,28 +12,11 @@ int main()
 
     while (getline(in, s))
     {
-        char firstNum = 0;
-        char lastNum = 0;
-        for (int c : s) // for each line
-        {
-            if (c >= 48 && c <= 57) // is number
-            {
-                if (!firstNum)
-                {
-                    firstNum = c;
-                }
-                else
-                {
-                    lastNum = c;
-                }
-            }
-        }
-        if (!lastNum)
-        {
-            lastNum = firstNum;
-        }
-        // std::cout << "First: " << firstNum << ", Second: " << lastNum << std::endl;
-        out += (firstNum - 48) * 10 + (lastNum - 48);
+        // regex [0:-1] for numbers
+        // then regex [1:-1] for numbers
+        // if first is empty fill it else fill the last
+        // if !last, last = first
+        // add first * 10 + last
     }
 
     in.close();
